@@ -1,4 +1,4 @@
-var gridsize = 100;
+var gridsize = 40;
 let snake;
 let food;
 
@@ -28,16 +28,16 @@ function draw() {
 }
 
 function keyPressed() {
-    if (keyCode === UP_ARROW) {
+    if ((keyCode === UP_ARROW || keyCode === 87) && snake.yspeed != 1) {
         snake.update(0, -1);
     }
-    if (keyCode === DOWN_ARROW) {
+    if ((keyCode === DOWN_ARROW || keyCode === 83) && snake.yspeed != -1) {
         snake.update(0, 1);
     }
-    if (keyCode === LEFT_ARROW) {
+    if ((keyCode === LEFT_ARROW || keyCode === 65) && snake.xspeed != 1) {
         snake.update(-1, 0);
     }
-    if (keyCode === RIGHT_ARROW) {
+    if ((keyCode === RIGHT_ARROW || keyCode === 68) && snake.xspeed != -1) {
         snake.update(1, 0);
     }
 }
